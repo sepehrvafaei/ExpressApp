@@ -1,0 +1,16 @@
+﻿body {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: royalblue;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    margin-bottom: 10px;
+}
