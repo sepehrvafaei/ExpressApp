@@ -37,6 +37,9 @@
     <Compile Include="passportConfig.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="public\javascripts\gameScript.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes\admin.js">
       <SubType>Code</SubType>
     </Compile>

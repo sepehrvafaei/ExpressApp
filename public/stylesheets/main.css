@@ -1,8 +1,13 @@
-﻿body {
-    box-sizing: border-box;
+﻿*, *::after, *::before {
+    box-sizing:border-box
 }
-
 h1 {
     color: royalblue;
     text-align: center;
 }
+.board {
+    width:100vw;
+
+}
+
+
