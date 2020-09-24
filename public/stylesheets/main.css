@@ -3,11 +3,157 @@
 }
 h1 {
     color: royalblue;
-    text-align: center;
+}
+.navbar {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom:10px;
 }
 .board {
-    width:100vw;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+}
 
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer
+}
+
+    .cell:first-child,
+    .cell:nth-child(2),
+    .cell:nth-child(3) {
+        border-top: none
+    }
+
+    .cell:nth-child(3n+1) {
+        border-left: none
+    }
+
+    .cell:nth-child(3n+3) {
+        border-right: none
+    }
+
+    .cell:last-child,
+    .cell:nth-child(8),
+    .cell:nth-child(7) {
+        border-bottom: none
+    }
+
+    .cell.x::after,
+    .cell.x::before {
+        background-color: black
+    }
+
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
+    background-color: lightgray
+}
+
+.cell.x::after,
+.cell.x::before,
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
+    content: '';
+    width: calc(90px*.1);
+    height: 90px;
+    position: absolute
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.o):hover::before {
+    transform: rotate(45deg)
+}
+
+.cell.x::after, .board.x .cell:not(.x):not(.o):hover::after {
+    transform: rotate(-45deg)
+}
+
+.cell.o::after,
+.cell.o::before,
+.board.o .cell:not(.x):not(.o):hover::before,
+.board.o .cell:not(.x):not(.o):hover::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%
+}
+
+.cell.o::before {
+    background-color: black
+}
+
+.cell.o::after {
+    background-color: white
+}
+
+.board.o .cell:not(.x):not(.o):hover::before {
+    background-color: lightgray
+}
+
+.board.o .cell:not(.x):not(.o):hover::after {
+    background-color: white
+}
+
+.cell.o::before,
+.board.o .cell:not(.x):not(.o):hover::before {
+    width: 90px;
+    height: 90px;
+}
+
+.cell.o::after,
+.board.o .cell:not(.x):not(.o):hover::after {
+    width: calc(90px*.8);
+    height: calc(90px*.8);
+}
+
+.cell.x, .cell.o {
+    cursor: not-allowed
+}
+
+.winning-message {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+    .winning-message.show {
+        display: flex
+    }
+
+    .winning-message button {
+        background-color: deepskyblue;
+        color: black;
+        font-size: 20px;
+        cursor: pointer;
+        border: 1px solid black;
+    }
+
+        .winning-message button:hover {
+            background-color: white;
+            color: black
+        }
+
+.game-container {
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 5rem;
 }
 
 
